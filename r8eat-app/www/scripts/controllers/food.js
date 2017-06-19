@@ -1,1 +1,4 @@
-﻿myApp.controller("foodCtrl", function ($scope) { })
+﻿myApp.controller("foodCtrl", ['proxy', function ($scope, proxy) {
+	console.log("adf");
+	
+}])
