@@ -2,12 +2,18 @@
 	console.log("adf");
 	console.log(proxy.getTodaysMenu());
 
+
+	$scope.showOptions = false; 
 	var menu = proxy.getTodaysMenu();
 	$scope.currentImg = menu.mainProducts[0].imgSrc;
 	$scope.currentTitle = menu.mainProducts[0].title;
 
-	$("#foodImg").on("swipe", function () {
+	$("#foodImg").on("swiperight", function () {
 		swipeRight();
+	});
+
+	$("#foodImg").on("swipeleft", function () {
+		swipeLeft();
 	});
 
 	function swipeRight() {
@@ -15,5 +21,12 @@
 		$scope.currentImg = menu.mainProducts[1].imgSrc;
 		$scope.currentTitle = menu.mainProducts[1].title;
 		$scope.$apply();
+	}
+
+	function swipeLeft() {
+		proxy.dislikeFood();
+		$scope.showOptions = true;
+		$scope.$apply();
+		
 	}
 }])
