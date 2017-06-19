@@ -11,12 +11,12 @@
 				{
 					productId: "1",
 					title: "אוכל אוכל",
-					imgSrc: "https://goo.gl/images/eZLMS5"
+					imgSrc: "http://weknowyourdreams.com/images/food/food-08.jpg"
 				},
 				{
 					productId: "2",
 					title: "עוד אוכל",
-					imgSrc: "https://goo.gl/images/QFdxmt"
+					imgSrc: "http://www.ubmi.net/wp-content/uploads/2016/10/temp2.jpg"
 				}
 			]
 		}
@@ -29,5 +29,9 @@
 
 	this.getCurrentDate = function () {
 		retrun(new Date().getYear() + new Date().getMonth() + new Date().getDate());
+	}
+
+	this.likeFood = function () {
+
 	}
 }])
