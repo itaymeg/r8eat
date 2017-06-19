@@ -1,10 +1,12 @@
 'use strict';
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://104.46.40.104:27017', 
-                {user: 'r8eat', pwd:'R8eat!@#$%^&'});
+mongoose.connect('mongodb://r8eat-db:oMZVtYoBY3WIydzO0I7IpszBr0zPVeLCH6zff3FysdI8mhwpj6d1go612Y0R3ieZYP1z9IN8RFpkutAui0QXYQ==@r8eat-db.documents.azure.com:10255/r8eat-db?ssl=true&replicaSet=globaldb');
 var Schema = mongoose.Schema;
 
 var productSchema = new Schema({
+  _id: {
+    type: String
+  },
   name: {
     type: String
   },
@@ -21,17 +23,14 @@ var productSchema = new Schema({
       type: Number
   },
   product_type: {
-    type: [{
-      type: String,
-      enum: ['main', 'side', 'salad']
-    }]
+    type: String
   }
 });
 
-mongoose.model('productTest', productSchema);
+mongoose.model('products', productSchema);
 
 function getProductById(id) {
-    return mongoose.model('productTest').findOne({ 'id': parseFloat(id)});
+    return mongoose.model('products').findOne({ '_id': id });
 }
 
 module.exports = {
