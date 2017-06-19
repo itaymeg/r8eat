@@ -1,18 +1,18 @@
 ﻿myApp.config(function ($routeProvider) {
 	$routeProvider.when("/",
 		{
-			templateUrl: "homePage.html",
+			templateUrl: "views/homePage.html",
 			controller: "homeCtrl"
 		}).when("/foodRate",
 		{
-			templateUrl: "FoodRate.html",
+			templateUrl: "views/FoodRate.html",
 			controller: "foodCtrl"
 		}).when("/menu",
 		{
-			templateUrl: "Menu.html",
+			templateUrl: "views/Menu.html",
 			controller: "menuCtrl"
 		}).otherwise({
-			templateUrl: "homePage.html",
+			templateUrl: "views/homePage.html",
 			controller: "homeCtrl"
 		})
 })
