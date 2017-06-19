@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="r8eat-service" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\repos\\r8eat-service\\r8eat-service\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\repos\\r8eat-service\\r8eat-service\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+</parameters>
