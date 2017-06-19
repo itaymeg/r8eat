@@ -3,8 +3,18 @@
 	console.log(proxy.getTodaysMenu());
 
 
-	$scope.showOptions = false; 
 	var menu = proxy.getTodaysMenu();
+
+	$scope.display = {
+		options: { doShow: true, value: menu},
+		tinder: { doShow: false,  value: null},
+		explain: { doShow: false, value: null }
+	}
+
+
+
+	$scope.showOptions = false; 
+
 	$scope.currentImg = menu.mainProducts[0].imgSrc;
 	$scope.currentTitle = menu.mainProducts[0].title;
 
