@@ -1,6 +1,7 @@
 'use strict';
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://104.46.40.104:3389');
+mongoose.connect('mongodb://104.46.40.104:27017', 
+                {user: 'r8eat', pwd:'R8eat!@#$%^&'});
 var Schema = mongoose.Schema;
 
 var productSchema = new Schema({
@@ -30,7 +31,7 @@ var productSchema = new Schema({
 mongoose.model('productTest', productSchema);
 
 function getProductById(id) {
-    mongoose.model('productTest').findOne({ _id: id});
+    return mongoose.model('productTest').findOne({ 'id': parseFloat(id)});
 }
 
 module.exports = {
