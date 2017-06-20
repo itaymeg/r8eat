@@ -10,13 +10,18 @@
 			mainProducts: [
 				{
 					productId: "1",
-					title: "אוכל אוכל",
-					imgSrc: "http://weknowyourdreams.com/images/food/food-08.jpg"
+					title: "עוף",
+					imgSrc: "../images/Chicken.jpeg"
 				},
 				{
 					productId: "2",
-					title: "עוד אוכל",
-					imgSrc: "http://www.ubmi.net/wp-content/uploads/2016/10/temp2.jpg"
+					title: "שניצל",
+					imgSrc: "../images/Shnitzel.jpg"
+				},
+				{
+					productId: "3",
+					title: "המבורגר",
+					imgSrc: "../images/Hamburger.jpg"
 				}
 			]
 		}
