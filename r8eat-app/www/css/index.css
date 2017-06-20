@@ -211,7 +211,7 @@ h3 {
 			transform: rotateY(320deg) translateZ(288px);
 		}
 
-img {
+#myImg {
 	-webkit-filter: grayscale(1);
 	cursor: pointer;
 	transition: all .5s ease;
