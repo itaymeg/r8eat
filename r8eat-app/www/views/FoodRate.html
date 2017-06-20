@@ -1,6 +1,6 @@
 ﻿<div id="foodImg">
 	<div ng-if="display.options.doShow">
-		<div>מה אכלת היום?</div>
+		<div style="font-size: xx-large">מה אכלת היום?</div>
 		<div class="container">
 			<img class="image" style="width: 100%; height: 100%"
 				 ng-src={{display.options.value.mainProducts[0].imgSrc}}
@@ -25,23 +25,31 @@
 		<img style="width: 100%; height: 100%" ng-src={{display.tinder.value.imgSrc}} />
 		<center><b><i>{{display.tinder.value.title}}</i></b></center>
 	</div>
-	<div ng-if= "diaplay.explain.doShow" style="width: 100%; height: 100%; margin-top: 40%">
+	<div ng-if= "display.explain.doShow" style="width: 100%; height: 100%;">
 		<div>מה היית משפר?</div>
 
-			<div style="width:100%; margin: 3%" class="row">
-				<button class="btn btn-primary col-md-12">מחליף רוטב</button>
+			<div style="width:95%; margin: 3%" class="row">
+				<button ng-click="optionClicked()" style="width:100%" class="btn btn-primary">מחליף רוטב</button>
 			</div>
 
-			<div style="width:100%; margin: 3%" class="row">
-				<button style="width:100%" class="btn btn-success col-md-12">רוטב בנפרד</button>
+			<div style="width:95%; margin: 3%" class="row">
+				<button style="width:100%" class="btn btn-success">רוטב בנפרד</button>
 			</div>
 
-			<div style="width:100%; margin: 3%" class="row">
-				<button style="width:100%" class="btn col-md-12">מעט מדי רוטב</button>
+			<div style="width:95%; margin: 3%" class="row">
+				<button style="width:100%" class="btn">מעט מדי רוטב</button>
 			</div>
-			<div style="width:100%; margin: 3%" class="row">
-				<button style="width:100%" class="btn btn-warning col-md-12">יותר מדי רוטב</button>
+			<div style="width:95%; margin: 3%" class="row">
+				<button style="width:100%" class="btn btn-warning">יותר מדי רוטב</button>
 			</div>
 	</div>
+	<div ng-if="showCongradulations" style="width: 100%; height: 100%;">
+		<div style="font-size: xx-large; margin-right: 20%;">קודמת בתור לחד"א!</div>
+		<img class="image" 
+			 ng-src= {{congradsLink}}
+			  />
+		
+	</div>
+
 </div>
 

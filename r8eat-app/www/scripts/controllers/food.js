@@ -10,6 +10,7 @@
 		explain: { doShow: false, value: null }
 	}
 
+	$scope.congradsLink = "http://img245.imageshack.us/img245/1771/90388823vi4.gif";
 
 
 	$("#foodImg").on("swiperight", function () {
@@ -28,7 +29,9 @@
 
 	function swipeLeft() {
 		proxy.dislikeFood();
-		$scope.showOptions = true;
+		$scope.display.explain.doShow = true;
+		$scope.display.explain = angular.copy($scope.display.explain);
+		$scope.display.tinder.doShow = false;
 		$scope.$apply();
 		
 	}
@@ -38,5 +41,12 @@
 		$scope.display.tinder.doShow = true;
 		currentProductIndex = index;
 		$scope.display.tinder.value = angular.copy(obj);
+	}
+
+	$scope.optionClicked = function () {
+		$scope.showCongradulations = true;
+		$scope.display.explain.doShow = false;
+
+
 	}
 }])
