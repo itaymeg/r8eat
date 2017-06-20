@@ -1,11 +1,29 @@
 ﻿<div id="foodImg">
 	<div ng-if="display.options.doShow">
-		<img style="width: 100%; height: 100%" ng-src={{currentImg}} />
-		
+		<div>מה אכלת היום?</div>
+		<div class="container">
+			<img class="image" style="width: 100%; height: 100%"
+				 ng-src={{display.options.value.mainProducts[0].imgSrc}}
+				 ng-model="display.options.value.mainProducts[0]"
+				 ng-click= "showTinder(display.options.value.mainProducts[0], 0)"
+				  />
+			<p class="text">
+				עוף
+			</p>
+		</div>
+		<div class="container">
+			<img class="image" style="width: 100%; height: 100%"
+				 ng-src={{display.options.value.mainProducts[1].imgSrc}}
+				 ng-model="display.options.value.mainProducts[1]"
+				  ng-click= "showTinder(display.options.value.mainProducts[1], 1)"
+			<p class="text">
+				עוף
+			</p>
+		</div>
 	</div>
 	<div ng-if= "display.tinder.doShow" id="myImage">
-		<img style="width: 100%; height: 100%" ng-src={{currentImg}} />
-		<center><b><i>{{currentTitle}}</i></b></center>
+		<img style="width: 100%; height: 100%" ng-src={{display.tinder.value.imgSrc}} />
+		<center><b><i>{{display.tinder.value.title}}</i></b></center>
 	</div>
 	<div ng-if= "diaplay.explain.doShow" style="width: 100%; height: 100%; margin-top: 40%">
 		<div>מה היית משפר?</div>

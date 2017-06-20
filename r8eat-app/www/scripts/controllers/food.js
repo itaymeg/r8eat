@@ -1,7 +1,6 @@
 ﻿myApp.controller("foodCtrl", ['$scope','proxy', function ($scope, proxy) {
-	console.log("adf");
-	console.log(proxy.getTodaysMenu());
 
+	var currentProductIndex = 0;
 
 	var menu = proxy.getTodaysMenu();
 
@@ -13,11 +12,6 @@
 
 
 
-	$scope.showOptions = false; 
-
-	$scope.currentImg = menu.mainProducts[0].imgSrc;
-	$scope.currentTitle = menu.mainProducts[0].title;
-
 	$("#foodImg").on("swiperight", function () {
 		swipeRight();
 	});
@@ -28,8 +22,7 @@
 
 	function swipeRight() {
 		proxy.likeFood();
-		$scope.currentImg = menu.mainProducts[1].imgSrc;
-		$scope.currentTitle = menu.mainProducts[1].title;
+		$scope.display.tinder.value = angular.copy($scope.display.options.value.mainProducts[1-currentProductIndex]);
 		$scope.$apply();
 	}
 
@@ -38,5 +31,12 @@
 		$scope.showOptions = true;
 		$scope.$apply();
 		
+	}
+
+	$scope.showTinder = function (obj, index) {
+		$scope.display.options.doShow = false;
+		$scope.display.tinder.doShow = true;
+		currentProductIndex = index;
+		$scope.display.tinder.value = angular.copy(obj);
 	}
 }])
